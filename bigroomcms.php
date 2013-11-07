@@ -8,11 +8,11 @@ class bigroomCMS {
   var $table ='demo';
 
   public function display_public() {
-    $query = "SELECT * FROM demoDB ORDER BY created DESC LIMIT 10";
-    $m = mysql_query($query);
+    $table = "SELECT * FROM demoDB ORDER BY created DESC LIMIT 10";
+    $query = mysql_query($table);
 
-    if ( $r !== false && mysql_num_rows($m) > 0 ) {
-      while ( $a = mysql_fetch_assoc($m) ) {
+    if ( $table !== false && mysql_num_rows($query) > 0 ) {
+      while ( $a = mysql_fetch_assoc($query) ) {
         $title = stripslashes($a['title']);
         $bodytext = stripslashes($a['bodytext']);
 
