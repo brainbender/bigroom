@@ -6,7 +6,7 @@ class bigroomCMS {
   var $username = 'root';
   var $password = '@Brainbender1.';
   var $table ='demo';
-
+//displays the database table by descending sort with a limit of 10
   public function display_public() {
     $table = "SELECT * FROM demoDB ORDER BY created DESC LIMIT 10";
     $query = mysql_query($table);
@@ -17,11 +17,11 @@ class bigroomCMS {
         $bodytext = stripslashes($a['bodytext']);
 
         $entry_display .= <<<ENTRY_DISPLAY
-
+//display page not modified yet will work on that after this part is finished
     <div class="post">
-    	<h2>
+    	<h3>
     		$title
-    	</h2>
+    	</h3>
 	    <p>
 	      $bodytext
 	    </p>
@@ -56,12 +56,12 @@ ADMIN_OPTION;
 
     <form action="{$_SERVER['PHP_SELF']}" method="post">
     
-      <label for="title">Title:</label><br />
+      <label for="title">Title</label><br />
       <input name="title" id="title" type="text" maxlength="250" />
       <div class="clear"></div>
      
-      <label for="bodytext">Body Text:</label><br />
-      <textarea name="bodytext" id="bodytext"></textarea>
+      <label for="bodytext">Content.:</label><br />
+      <textarea name="Content" id="bodytext"></textarea>
       <div class="clear"></div>
       
       <input type="submit" value="Submit this entry." />
